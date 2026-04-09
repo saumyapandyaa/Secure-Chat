@@ -1,0 +1,22 @@
+# Python cache folders (seen in client/server)
+__pycache__/
+
+# Compiled Python files (.pyc shown in screenshots)
+*.pyc
+*.pyo
+
+# Logs folder (seen in your project)
+logs/
+
+# Log files
+*.log
+
+# Sensitive crypto keys (IMPORTANT from your server folder)
+server/keys/
+*.pem
+
+# Your existing compiled test files (seen in client)
+client/__pycache__/
+
+# Ignore anything inside __pycache__ everywhere
+**/__pycache__/

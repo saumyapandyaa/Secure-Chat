@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SecureChat Web Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="page">
+        <header class="hero">
+            <div>
+                <h1>SecureChat Web Demo</h1>
+                <p class="subtitle">Simplified TLS-like secure messaging with authentication, confidentiality, integrity, and replay protection.</p>
+            </div>
+            <div class="badge">SOFE Security Project</div>
+        </header>
+
+        <section class="grid">
+            <div class="card">
+                <h2>Connection Setup</h2>
+
+                <label for="expectedFingerprint">Pinned Server Fingerprint</label>
+                <textarea id="expectedFingerprint" rows="3" spellcheck="false" placeholder="Paste the expected SHA-256 fingerprint here"></textarea>
+
+                <div class="hint-box">
+                    <div class="hint-title">Demo convenience</div>
+                    <div class="hint-text">
+                        Current server fingerprint: <code id="currentServerFingerprint">{{ server_fingerprint }}</code>
+                    </div>
+                    <button id="copyFingerprintBtn" class="secondary">Copy current fingerprint into pinned field</button>
+                </div>
+
+                <div class="button-row">
+                    <button id="startBtn">Start Secure Session</button>
+                    <button id="closeBtn" class="danger" disabled>Close Session</button>
+                </div>
+
+                <div class="status-grid">
+                    <div><span class="label">Status</span><span id="statusText" class="value neutral">Disconnected</span></div>
+                    <div><span class="label">Server ID</span><span id="serverId" class="value">-</span></div>
+                    <div><span class="label">Session ID</span><span id="sessionId" class="value small">-</span></div>
+                    <div><span class="label">Fingerprint Check</span><span id="fingerprintStatus" class="value">Not verified</span></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Secure Messaging</h2>
+
+                <label for="messageInput">Message</label>
+                <textarea id="messageInput" rows="4" spellcheck="false" placeholder="Type a message to send securely"></textarea>
+
+                <div class="button-row">
+                    <button id="sendBtn" disabled>Send Secure Message</button>
+                </div>
+
+                <label for="responseBox">Latest Decrypted Server Reply</label>
+                <textarea id="responseBox" rows="6" readonly spellcheck="false"></textarea>
+            </div>
+
+            <div class="card">
+                <h2>Security Tests</h2>
+                <p class="small-text">These buttons demonstrate the security controls during presentation.</p>
+
+                <div class="button-column">
+                    <button id="tamperBtn" disabled>Tamper Test</button>
+                    <button id="replayBtn" disabled>Replay Test</button>
+                    <button id="wrongKeyBtn">Wrong Fingerprint Test</button>
+                </div>
+
+                <label for="testResult">Test Output</label>
+                <textarea id="testResult" rows="8" readonly spellcheck="false"></textarea>
+            </div>
+
+            <div class="card full">
+                <h2>Event Log</h2>
+                <textarea id="logBox" rows="14" readonly spellcheck="false"></textarea>
+            </div>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

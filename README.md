@@ -1,4 +1,4 @@
-# SecureChat — TLS-like Secure Communication System
+# SecureChat — Secure Communication System
 
 ## Project Summary
 

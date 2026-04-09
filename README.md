@@ -1,6 +1,6 @@
-# 🔐 SecureChat — TLS-like Secure Communication System
+# SecureChat — TLS-like Secure Communication System
 
-## 🚀 Project Summary
+## Project Summary
 
 SecureChat is a full-stack, security-focused application that implements a simplified version of the Transport Layer Security (TLS) protocol. The system demonstrates how secure communication is established and maintained between a client and server over an untrusted network.
 
@@ -8,7 +8,7 @@ This project was developed as part of a Software and Computer Security course to
 
 ---
 
-## 🎯 Key Highlights (Resume-Ready)
+## Key Highlights
 
 - Designed and implemented a **TLS-like secure communication protocol** from scratch
 - Implemented **end-to-end encrypted messaging** using AES-256-GCM
@@ -23,30 +23,30 @@ This project was developed as part of a Software and Computer Security course to
 
 ---
 
-## 🧠 Core Security Concepts Implemented
+## Core Security Concepts Implemented
 
-### 🔐 Authentication
+### Authentication
 
 - Server identity verified using **SHA-256 fingerprint pinning**
 - Prevents impersonation and MITM attacks
 
-### 🔒 Confidentiality
+### Confidentiality
 
 - All messages encrypted using **AES-256-GCM**
 - Ensures data cannot be read by third parties
 
-### 🛡️ Integrity
+### Integrity
 
 - AES-GCM authentication tags detect any modification of ciphertext
 - Tampered messages are automatically rejected
 
-### 🔁 Replay Protection
+### Replay Protection
 
 - Monotonic **sequence numbers** prevent reuse of captured messages
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```
 Client (Browser / Python)
@@ -72,7 +72,7 @@ Session Manager
 
 ---
 
-## 🔐 Protocol Design
+## Protocol Design
 
 ### Handshake Phase
 
@@ -91,31 +91,31 @@ Session Manager
 
 ---
 
-## 🧪 Security Testing
+## Security Testing
 
-### 🔴 Tamper Test
+### Tamper Test
 
 - Modifies ciphertext before transmission
 - AES-GCM detects mismatch → message rejected
 
-### 🔁 Replay Test
+### Replay Test
 
 - Resends previously valid message
 - Server detects duplicate sequence number → blocked
 
-### 🚫 Wrong Fingerprint Test
+### Wrong Fingerprint Test
 
 - Uses incorrect server identity
 - Client aborts handshake → connection rejected
 
-### 📡 Wireshark Analysis
+### Wireshark Analysis
 
 - Captured network traffic shows only encrypted data
 - No plaintext messages found → confirms confidentiality
 
 ---
 
-## 💻 Technologies Used
+## Technologies Used
 
 - **Backend:** Python, Flask
 - **Frontend:** HTML, CSS, JavaScript (Web Crypto API)
@@ -125,7 +125,7 @@ Session Manager
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 ### 1. Install dependencies
 
@@ -163,7 +163,7 @@ Hello from SecureChat client
 
 ---
 
-## 📈 Learning Outcomes
+## Learning Outcomes
 
 - Deep understanding of TLS protocol design
 - Hands-on implementation of cryptographic algorithms
@@ -173,6 +173,6 @@ Hello from SecureChat client
 
 ---
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 This project is intended for educational purposes and does not replace production-grade TLS implementations.
